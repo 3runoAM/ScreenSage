@@ -1,0 +1,46 @@
+.movie-show {
+    display: flex;
+    gap: 1rem;
+
+    width: 70rem;
+    margin: 5rem;
+}
+
+.poster {
+    width: 25rem;
+    height: 32rem;
+}
+
+.movie-info {
+    gap: 1rem;
+}
+
+.movie-title{
+    margin: 0;
+}
+
+.info-container{
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.info {
+    gap: 0.5rem;
+    font-weight: 700;
+}
+
+.separation-symbol{
+    margin: 0;
+}
+
+.plot {
+    margin: 0;
+    width: 75%;
+    font-size: 1.2rem;
+}
+
+.movie-edit {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,12 @@
+<div class="lists-container">
+  <h1 class="form-title">Diretores cadastrados</h1>
+  <ul class="flex-vertical directors-container">
+    <% @directors.each do |director| %>
+      <li class="flex-horizontal director">
+        <%=link_to director.name, director_path(director.id), class: 'director-name link' %>
+        <button class="button edit square"><%= link_to "Editar", edit_director_path(director.id) %></button>
+      </li>
+      <div class="div"></div>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,41 @@
+<div class="movie-show flex-horizontal">
+  <%= image_tag @movie.poster, class: 'poster' %>
+  <div class="flex-vertical movie-info">
+    <h1 class="movie-title"><%= @movie.title%></h1>
+
+    <div class="flex-horizontal info-container">
+
+      <div class="flex-horizontal info">
+        <i class="bi bi-calendar-event-fill"></i>
+        <%= @movie.release_year %>
+      </div>
+
+      <p class="separation-symbol">&#x26AC;</p>
+
+      <div  class="flex-horizontal info link">
+        <i class="bi bi-film"></i>
+        <%= link_to @movie.genre.name, genre_path(@movie.genre) %>
+      </div>
+
+      <p class="separation-symbol">&#x26AC;</p>
+
+      <div class="flex-horizontal info link">
+        <i class="bi bi-person-fill"></i>
+        <%= link_to @movie.director.name, director_path(@movie.director) %>
+      </div>
+
+      <p class="separation-symbol">&#x26AC;</p>
+
+      <div class="flex-horizontal info">
+        <i class="bi bi-globe"></i>
+        <%= @movie.origin_country %>
+      </div>
+    </div>
+
+    <p class="plot"><%= @movie.plot %></p>
+
+    <button class="button edit square flex-horizontal movie-edit"><%= link_to "Editar", edit_movie_path(@movie.id) %></button>
+  </div>
+</div>
+
+

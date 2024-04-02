@@ -1,0 +1,52 @@
+.flex-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.movies-title{
+    margin: 0;
+    font: 700 1.5rem var(--jetbrains-mono);
+}
+
+.lists-container{
+    margin: 2.2rem 2.2rem;
+}
+
+.movie-list {
+    overflow: auto;
+    width: auto;
+    height: 22rem;
+}
+
+.movie-list::-webkit-scrollbar{
+    width: 2rem;
+    height: 0.4rem;
+}
+
+.movie {
+    align-items: center;
+    gap: 5%;
+    max-height: 95%;
+    min-width: 10%;
+    overflow: hidden;
+}
+
+.poster-image {
+    width: 10rem;
+    height: 14rem;
+    background-size: cover;
+    box-shadow: var(--red-shadow) 0.1rem 0.1rem 0.5rem -0.1rem;
+}
+
+.details-container{
+    align-items: center;
+}
+
+.details-container{
+    gap: 0.5rem;
+}
+
+.movie-details {
+    font: 700 1rem var(--montserrat);
+    margin: 0;
+}

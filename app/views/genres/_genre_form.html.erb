@@ -1,0 +1,10 @@
+<%= form_for @genre do |g| %>
+  <% if flash[:notice] %>
+    <%= flash[:notice] %>
+  <% end %>
+
+  <div class="flex-vertical align">
+    <%= g.text_field :name, placeholder: "Título", class: "flex-horizontal input-style input-height-text"  %>
+    <%= g.submit "Salvar", class: "button save" %>
+  </div>
+<% end %>

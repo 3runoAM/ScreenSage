@@ -1,0 +1,35 @@
+.align{
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.genres {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.genre-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 17rem;
+    height: 10rem;
+    background: linear-gradient(255deg, #F95248 -18.96%, #3AA8B9 112.9%);
+    border-radius: 1rem;
+}
+
+.button.round {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+}
+
+.genre-name{
+    font: 900 1.5rem var(--jetbrains-mono);
+    width: inherit;
+    display: flex;
+    justify-content: center;
+}

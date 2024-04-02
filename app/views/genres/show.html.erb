@@ -1,0 +1,4 @@
+<div class="movies-lists-container flex-vertical">
+  <h1>Filmes de <%= @genre.name %></h1>
+  <%=render partial: 'home/movies', locals: {movies: @movies} %>
+</div>

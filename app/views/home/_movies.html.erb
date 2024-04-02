@@ -1,0 +1,15 @@
+<ul class="flex-horizontal movie-list">
+  <% movies.each do |movie| %>
+    <li class="movie flex-vertical">
+      <%= image_tag movie.poster, class: "poster-image" %>
+      <div class="details-container flex-vertical">
+        <% if movie.title.length > 10 %>
+          <%= link_to movie.title[0..9] + "...", movie_path(movie.id), class: "movie-details link" %>
+        <% else %>
+          <%= link_to movie.title, movie_path(movie.id), class: "movie-details link" %>
+        <% end %>
+        <p class="movie-details"><%= movie.release_year %></p>
+      </div>
+    </li>
+  <% end %>
+</ul>

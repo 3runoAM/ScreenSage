@@ -1,0 +1,201 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+:root {
+    --black-background: #1D1D1D;
+    --blue-shadow: #17314F;
+    --red-shadow: #C53A3A;
+    --pure-white: #fff;
+    --edit-yellow: #DEB831;
+    --montserrat: 'MontSerrat', serif;
+    --jockey-one: 'Jockey One', serif;
+    --jetbrains-mono: 'JetBrains Mono', serif;
+    --josefin-sans: 'Josefin Sans', serif;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: var(--montserrat);
+    scroll-behavior: smooth;
+    background-color: var(--black-background);
+    color: var(--pure-white);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: var(--red-shadow);
+}
+
+ul {
+    list-style-type: none;
+    gap: 2rem;
+    padding: 0;
+}
+
+/*Estilos da scroll bar*/
+::-webkit-scrollbar {
+    width: 0.6rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--black-background);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--red-shadow);
+    border-radius: 1rem;
+}
+
+/*-------------*/
+/*Estilos da nav bar*/
+.flex-horizontal {
+    display: flex;
+    align-content: center;
+}
+
+.nav-style {
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
+    gap: 60%;
+    background-color: var(--black-background);
+    box-shadow: var(--blue-shadow) 0 0.4rem 0.5rem;
+
+}
+
+.title {
+    margin-bottom: 2rem;
+    font: 2rem var(--jockey-one);
+}
+
+.nav-item{
+    font: 1.5rem var(--jetbrains-mono);
+}
+
+.active {
+    color: var(--red-shadow);
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+/*Estilos do menu dropdown*/
+.dropbtn {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: var(--blue-shadow);
+    position: absolute;
+    right: 1.7rem;
+    top: 4.8rem;
+    z-index: 1;
+    border-radius: 1rem;
+}
+
+
+.dropdown-content a {
+    color: var(--red-shadow);
+    font-size: 1.2rem;
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:first-child {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.dropdown-content a:last-child {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.dropdown-content:first-child:hover{
+    border-radius: 1rem 1rem 0 0;
+}
+
+.dropdown-content::before {
+    content: "";
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: -22%;
+    border-radius: 0.2rem;
+    border-width: 1.5rem;
+    border-style: solid;
+    border-color: transparent transparent var(--blue-shadow) transparent;
+    z-index: -1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.drop-item:hover {
+    background-color: var(--red-shadow);
+    color: var(--blue-shadow);
+}
+
+/*Outros estilos globais */
+.form-title {
+    text-decoration: underline;
+    margin: 0;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pure-white);
+    font-weight: bolder;
+    font-size: 1rem;
+    height: 2rem;
+    border: none;
+    box-shadow: #000 0 0.01rem;
+    cursor: pointer;
+}
+
+.square {
+    width: 5rem;
+    border-radius: 0.2rem;
+}
+
+.round {
+    width: 2rem;
+    border-radius: 2rem;
+}
+
+.edit {
+    background-color: var(--edit-yellow);
+}
+
+.save {
+    background-color: var(--blue-shadow);
+}
+
+/*Peronalização da scroll bar no firefox*/
+/*body {*/
+/*    scrollbar-width: thin;/
+/*    scrollbar-color: var(--red-shadow) var(--blue-shadow); !* thumb e track da barra de rolagem *!*/
+/*}*/

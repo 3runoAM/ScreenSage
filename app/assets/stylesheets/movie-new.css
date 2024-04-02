@@ -1,0 +1,71 @@
+.form-style{
+    align-self: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 10rem;
+}
+
+.final-info{
+    margin-top: 1rem;
+    gap: 1rem;
+    align-items: center;
+}
+
+.two-parts-form {
+    gap: 0.5rem;
+}
+
+.input-container{
+    position: relative;
+}
+
+.input-style {
+    width: 20rem;
+    font: 500 1rem var(--montserrat);
+    color: var(--pure-white);
+    background: transparent;
+    border: solid thin var(--pure-white);
+    border-radius: 0.4rem;
+}
+
+.input-height-text {
+    height: 1.5rem;
+}
+
+.input-height-textarea{
+    height: 7.8rem;
+}
+
+.plus-symbol {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+}
+
+input[type='file'] {
+    display: none;
+}
+
+.poster-label {
+    height: 5.5rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.label-name{
+    margin: 0;
+}
+
+label {
+    font: 400 1rem var(--montserrat);
+}
+
+select {
+    background: var(--black-background);
+    color: var(--pure-white);
+    font: 400 1rem var(--montserrat);
+    height: 1.5rem;
+}

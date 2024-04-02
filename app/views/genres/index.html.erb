@@ -1,0 +1,15 @@
+<div class="lists-container">
+  <h1 class="form-title">Gêneros cadastrados</h1>
+  <ul class="genres">
+    <% @genres.each do |genre| %>
+      <li class="genre-container">
+        <%= link_to edit_genre_path(genre.id) do %>
+          <button class="button round edit">
+            <i class="bi bi-pencil-square"></i>
+          </button>
+        <% end %>
+        <p class="genre-name"><%= link_to genre.name, genre_path(genre.id) %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>

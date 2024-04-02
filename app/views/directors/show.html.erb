@@ -1,0 +1,14 @@
+<div class="lists-container">
+  <h1><%= @director.name %></h1>
+
+  <p>Nacionalidade: <%=@director.nationality %></p>
+  <p>Data de nascimento: <%=@director.birth_date.strftime("%d/%m/%Y") %></p>
+  <p>Gênero favorito: <%=@director.favorite_genre.name %></p>
+
+  <button class="button square edit"><%= link_to "Editar ", edit_director_path(@director.id) %></button>
+
+  <div class="lists-container">
+    <h2>Lista de filmes</h2>
+    <%= render partial: 'home/movies', locals: { movies: @movies}%>
+  </div>
+</div>

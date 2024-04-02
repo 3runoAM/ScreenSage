@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ScreenSage</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Jockey+One&family=Josefin+Sans:wght@400&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="flex-vertical">
+  <nav class="flex-horizontal nav-style">
+    <h1 class="title link"><%= link_to 'Screen Sage', root_path %></h1>
+    <ul class="flex-horizontal">
+      <li class="nav-item link <%= 'active' if current_page?(root_path) %>"><%= link_to 'Home', root_path %></li>
+      <li class="nav-item link <%= 'active' if current_page?(genres_path) %>"><%= link_to 'Gêneros', genres_path %></li>
+      <li class="nav-item link <%= 'active' if current_page?(directors_path) %>"><%= link_to 'Diretores', directors_path %></li>
+      <li class="nav-item dropdown">
+        <a class="dropbtn link <%= 'active' if request.path.include?('new') %>" href="#">Cadastrar</a>
+        <div class="dropdown-content">
+          <%=link_to "Filmes", new_movie_path, class: "drop-item"%>
+          <%= link_to 'Gênero', new_genre_path, class: "drop-item"%>
+          <%= link_to "Diretor", new_director_path, class: "drop-item" %>
+        </div>
+      </li>
+    </ul>
+  </nav>
+    <%= yield %>
+  </body>
+</html>

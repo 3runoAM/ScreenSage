@@ -1,0 +1,21 @@
+<div class="flex-vertical">
+  <%= form_for @director do |d|%>
+    <% if flash[:notice] %>
+      <%= flash[:notice] %>
+    <% end %>
+
+    <%= d.text_field :name, placeholder: "Nome", class: "flex-horizontal input-style input-height-text" %>
+
+    <%= d.text_field :nationality, placeholder: "Nacionalidade", class: "flex-horizontal input-style input-height-text" %>
+
+    <div>
+      <%= d.label :birth_date, "Data de nascimento" %>
+      <%= d.date_field :birth_date, class: "flex-horizontal input-style input-height-text"%>
+    </div>
+
+    <div class="flex-vertical input-style">
+      <%= d.collection_select :favorite_genre_id, Genre.all, :id, :name, prompt: "Gênero favorito"%>
+    </div>
+    <%= d.submit "Salvar", class: "button save align-self"  %>
+  <% end %>
+</div>

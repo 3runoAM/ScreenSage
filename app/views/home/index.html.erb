@@ -1,0 +1,15 @@
+<div class="lists-container flex-vertical">
+  <h3 class="movies-title">Lançados</h3>
+  <div class="movies-container">
+    <div class="movies-content ">
+      <%= render partial: 'movies', locals: { movies: @released_movies}%>
+    </div>
+  </div>
+
+  <h3 class="movies-title">Em breve</h3>
+  <div class="movies-container">
+    <div class="movies-content">
+      <%= render partial: 'movies', locals:{ movies: @unreleased_movies}%>
+    </div>
+  </div>
+</div>

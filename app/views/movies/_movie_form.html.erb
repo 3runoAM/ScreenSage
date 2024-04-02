@@ -1,0 +1,50 @@
+<div class="flex-vertical">
+  <%= form_for @movie do |m| %>
+    <% if flash[:notice] %>
+      <%= flash[:notice] %>
+    <% end %>
+    <div class="flex-horizontal two-parts-form">
+      <div class="flex-vertical form-part-one">
+        <div class="flex-vertical input-container input-style">
+          <%= m.label :poster, class: "poster-label flex-vertical link" do %>
+            <i class="bi bi-plus-circle"></i><p class="label-name">Adicionar poster</p>
+          <% end %>
+          <%=m.file_field :poster, accept: 'image/png,image/jpg,image/jpeg' %>
+        </div>
+        <br/>
+
+        <div class="flex-vertical input-style">
+          <%= m.collection_select :genre_id, Genre.all, :id, :name, prompt: "Gênero"%>
+        </div>
+
+        <br/>
+        <div class="flex-vertical input-style">
+          <%= m.select :release_year, (1800..(Date.today.year+5)).to_a.reverse, prompt: "Lançamento" %>
+        </div>
+
+        <br/>
+
+        <div class="flex-vertical input-style">
+          <%= m.collection_select :director_id, Director.all, :id, :name, prompt: "Diretor" %>
+        </div>
+      </div>
+
+      <div class="flex-vertical form-part-two">
+        <%=m.text_field :title, placeholder: "Título", class: "flex-horizontal input-style input-height-text" %>
+        <br/>
+        <%= m.text_area :plot, placeholder: "Sinopse", class: "flex-horizontal input-style input-height-textarea" %>
+        <br/>
+        <%= m.text_field :origin_country, placeholder: "País de origem", class: "flex-horizontal input-style input-height-text" %>
+      </div>
+    </div>
+
+    <div class="final-info flex-vertical">
+      <div>
+        <%= m.check_box :draft, {}, 'Rascunho', 'Postado' %>
+        <%= m.label :draft, "Salvar como rascunho", class: "label" %>
+      </div>
+
+      <%= m.submit "Salvar", class: "button save" %>
+    </div>
+  <% end %>
+</div>
